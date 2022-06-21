@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Kodluyoruz.org</title>
+    <script>
+      // Tıklanan group buttun'a göre class eklemesi yapıp çıkarıyor. Bu sayede seçili olan button'ı fark edebiliyoruz. UX açısından +.
+      function handleClickGroup(groupName) {
+        // btn-group class'ının altındaki tüm elementleri almamızı ve bunu bir değişkene eşitliyoruz.
+        const allButtons = document.querySelectorAll(".btn-group > *");
+        for (let i = 0; i < allButtons.length; i++) {
+          if (allButtons[i].classList.length > 0) {
+            allButtons[i].classList = "";
+          } else if (i === groupName) {
+            groupName === 0
+              ? allButtons[i].classList.add("btn-active-orangered")
+              : groupName === 1
+              ? allButtons[i].classList.add("btn-active-deeppink")
+              : groupName === 2
+              ? allButtons[i].classList.add("btn-active-aliceblue")
+              : allButtons[i].classList.add("btn-active-all");
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-title">
+        <h1>MAKES GROUP</h1>
+      </div>
+      <div class="container-body">
+        <div class="container-first-group">
+          <div class="group-title">
+            <span>Group Name: </span>
+          </div>
+          <div class="btn-group">
+            <button id="btn-1" value="OrangeRed" onclick="handleClickGroup(0)">
+              Orange Red
+            </button>
+            <button id="btn-2" value="DeepPink" onclick="handleClickGroup(1)">
+              Deep Pink
+            </button>
+            <button id="btn-3" value="AliceBlue" onclick="handleClickGroup(2)">
+              Alice Blue
+            </button>
+            <button id="btn-4" value="All" onclick="handleClickGroup(3)">
+              All
+            </button>
+          </div>
+        </div>
+        <div class="container-second-group">
+          <div class="group-title">
+            <span>Only Assistant: </span>
+          </div>
+          <div class="select-group">
+            <select name="members-filter" id="members-filter">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="container-third-group">
+          <button type="submit" id="btn-search">Search</button>
+        </div>
+      </div>
+      <div class="container-text">
+        <div class="container-text-title">
+          <h2>Member List</h2>
+        </div>
+        <div class="container-content">
+          <table class="content-table" id="content-table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Assistant</th>
+                <th>Group</th>
+              </tr>
+            </thead>
+            <tbody id="content-table-body">
+              <tr>
+                <td>1</td>
+                <td>Güney Eroğlu</td>
+                <td>-</td>
+                <td>OrangeRed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./script/js/MakesGroup.js"></script>
+  </body>
+</html>
