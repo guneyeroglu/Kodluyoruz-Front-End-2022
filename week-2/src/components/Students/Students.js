@@ -8,8 +8,7 @@ const Students = (props) => {
    * Üyelerin isimlerinin düzenlenmesi için split, charAt, slice ve join method'larından yararlanıyorum.
    * Önce kelimelere bölüyor, her kelimeyi map'liyor ve bana döndürülen her kelime içinse baş harflerini büyük, gerisini küçük olacak şekilde render'lıyorum.
    */
-  const students =
-    data &&
+  const students = data ? (
     data
       .filter((member) => member.group === props.groupName && !member.assistant)
       .map((member) => (
@@ -38,21 +37,25 @@ const Students = (props) => {
             </li>
           </ul>
         </div>
-      ));
+      ))
+  ) : (
+    <div>
+      <span>Veri Bulunamadı</span>
+    </div>
+  );
+
   return (
-    <>
-      <div className={props.className.first}>
-        <div className={props.className.second}>
-          <ul>
-            <li>Id</li>
-            <li>Full Name</li>
-            <li>Assistant</li>
-            <li>Group Name</li>
-          </ul>
-        </div>
-        {students}
+    <div className={props.className.first}>
+      <div className={props.className.second}>
+        <ul>
+          <li>Id</li>
+          <li>Full Name</li>
+          <li>Assistant</li>
+          <li>Group Name</li>
+        </ul>
       </div>
-    </>
+      {students}
+    </div>
   );
 };
 

@@ -6,8 +6,7 @@ const Assistants = (props) => {
    * Filtrelemeyi ise props yardımı ile gönderdiğim groupName'e göre yapıyorum.
    */
 
-  const assistants =
-    data &&
+  const assistants = data ? (
     data
       .filter((member) => member.group === props.groupName && member.assistant)
       .map((member) => (
@@ -27,21 +26,24 @@ const Assistants = (props) => {
             </li>
           </ul>
         </div>
-      ));
+      ))
+  ) : (
+    <div>
+      <span>Veri Bulunamadı</span>
+    </div>
+  );
   return (
-    <>
-      <div className={props.className.first}>
-        <div className={props.className.second}>
-          <ul>
-            <li>Id</li>
-            <li>Full Name</li>
-            <li>Assistant</li>
-            <li>Group Name</li>
-          </ul>
-        </div>
-        {assistants}
+    <div className={props.className.first}>
+      <div className={props.className.second}>
+        <ul>
+          <li>Id</li>
+          <li>Full Name</li>
+          <li>Assistant</li>
+          <li>Group Name</li>
+        </ul>
       </div>
-    </>
+      {assistants}
+    </div>
   );
 };
 
