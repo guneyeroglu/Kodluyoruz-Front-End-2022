@@ -27,26 +27,21 @@ const Container = () => {
   };
 
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.container__title}>
-          <span>Bursa React Bootcamp Group Maker v2.0</span>
-        </div>
-        <div className={styles.container__list}>
-          <div className={styles.container__list__main}>
-            {Object.keys(groupNames).map((groupName) => (
-              <div
-                key={groupName}
-                className={styles.container__list__main__card}
-              >
-                <Assistants groupName={groupName} className={classes} />
-                <Students groupName={groupName} className={classes} />
-              </div>
-            ))}
-          </div>
+    <div className={styles.container}>
+      <div className={styles.container__title}>
+        <span>Bursa React Bootcamp Group Maker v2.0</span>
+      </div>
+      <div className={styles.container__list}>
+        <div className={styles.container__list__main}>
+          {Object.keys(groupNames).map((groupName) => (
+            <div key={groupName} className={styles.container__list__main__card}>
+              <Assistants groupName={groupName} className={classes} />
+              <Students groupName={groupName} className={classes} />
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
