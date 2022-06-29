@@ -9,7 +9,7 @@ const Header = () => {
   const [selectedHeader, setSelectedHeader] = useState(0);
 
   return (
-    <header className={styles.header} id="header">
+    <header className={styles.header}>
       <ul className={styles.header__ul}>
         <li
           className={selectedHeader === 0 ? styles.active : ""}
