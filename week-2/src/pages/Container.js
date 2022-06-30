@@ -21,9 +21,9 @@ const Container = () => {
    * Objemin 3 elemanı var ve component'ların içindeki gerekli yerler için uygun olan class'ları temsil ediyorlar.
    */
   const classes = {
-    first: styles.container__list__main__card__item,
-    second: styles.container__list__main__card__item__header,
-    third: styles.container__list__main__card__item__body,
+    first: styles.card__item,
+    second: styles.card__item__header,
+    third: styles.card__item__body,
   };
 
   return (
@@ -34,7 +34,7 @@ const Container = () => {
       <div className={styles.container__list}>
         <div className={styles.container__list__main}>
           {Object.keys(groupNames).map((groupName) => (
-            <div key={groupName} className={styles.container__list__main__card}>
+            <div key={groupName} className={styles.card}>
               <Assistants groupName={groupName} className={classes} />
               <Students groupName={groupName} className={classes} />
             </div>
