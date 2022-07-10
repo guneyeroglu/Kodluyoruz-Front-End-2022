@@ -1,0 +1,138 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 20%;
+  border-right: 2px solid #f1f2f7;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin: 2rem 0 0 0;
+    height: 40px;
+
+    .logo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 500;
+        color: #000;
+        padding: 0 0 0 1.5rem;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        border: 3px solid #0075ff;
+        border-radius: 50%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0);
+        border: 3px solid #1be3a7;
+        border-radius: 50%;
+        margin: 0.57rem;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .button {
+      svg {
+        path {
+          fill: #8b8b8b;
+        }
+
+        &:hover {
+          cursor: pointer;
+          path {
+            fill: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: calc(100% - 40px - 2rem);
+    padding: 2rem 0 7rem 0;
+
+    .menu__bar {
+      width: 100%;
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 1rem;
+          padding: 1rem;
+          span {
+            color: #717986;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+          }
+          &:hover {
+            background-color: #f9f9f9;
+            cursor: pointer;
+          }
+        }
+        .selected {
+          background-color: #f9f9f9;
+          svg {
+            path {
+              fill: #00db99;
+            }
+          }
+          span {
+            color: #00db99;
+          }
+        }
+      }
+    }
+
+    .menu__out {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      width: 100%;
+      padding: 1rem 0;
+      border-top: 2px solid #f1f2f7;
+      span {
+        color: #ff285c;
+      }
+      &:hover {
+        background-color: #f9f9f9;
+        cursor: pointer;
+      }
+    }
+  }
+}
