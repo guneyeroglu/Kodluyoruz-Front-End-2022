@@ -3,6 +3,8 @@
   flex-direction: column;
   flex: 0 1 20%;
   border-right: 2px solid #f1f2f7;
+  min-height: 100vh;
+  height: auto;
 
   &__top {
     display: flex;
